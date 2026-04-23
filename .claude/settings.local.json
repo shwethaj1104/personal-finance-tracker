@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add .gitignore)"
+      "Bash(git add .gitignore)",
+      "Bash(git config user.name)"
     ],
     "deny": [],
     "ask": []
