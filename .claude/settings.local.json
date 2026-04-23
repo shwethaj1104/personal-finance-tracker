@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add .gitignore)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
