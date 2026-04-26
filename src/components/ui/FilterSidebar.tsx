@@ -41,9 +41,15 @@ export default function FilterSidebar({
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex">
-      <div className="fixed inset-0 bg-black bg-opacity-50" onClick={onClose} />
-      <div className="ml-auto bg-white w-96 h-full shadow-xl">
+    <>
+      {/* Backdrop */}
+      <div
+        className="fixed inset-0 bg-black bg-opacity-50 z-40"
+        onClick={onClose}
+      />
+
+      {/* Sidebar */}
+      <div className="fixed top-0 right-0 h-full w-96 bg-white shadow-xl z-50 flex flex-col">
         <div className="p-6 border-b">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-semibold text-gray-900">Advanced Filters</h2>
@@ -58,7 +64,7 @@ export default function FilterSidebar({
           </div>
         </div>
 
-        <div className="p-6 space-y-6 overflow-y-auto h-full pb-20">
+        <div className="flex-1 p-6 space-y-6 overflow-y-auto">
           {/* Date Range */}
           <div>
             <h3 className="text-sm font-medium text-gray-900 mb-3">Date Range</h3>
@@ -170,7 +176,7 @@ export default function FilterSidebar({
         </div>
 
         {/* Fixed Footer */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 bg-white border-t">
+        <div className="flex-shrink-0 p-6 bg-white border-t">
           <div className="flex space-x-3">
             <button
               onClick={handleApplyFilters}
@@ -187,6 +193,6 @@ export default function FilterSidebar({
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
