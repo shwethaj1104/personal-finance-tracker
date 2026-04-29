@@ -13,6 +13,7 @@ export default function DashboardPage() {
   const [dashboardData, setDashboardData] = useState<any>(null)
   const [filters, setFilters] = useState({
     dateRange: { start: '2024-01-01', end: '2024-12-31' },
+    month: '',
     categories: [],
     transactionType: 'all' as 'all' | 'income' | 'expense',
     amountRange: { min: '', max: '' }
