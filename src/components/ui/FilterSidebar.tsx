@@ -7,6 +7,7 @@ interface FilterSidebarProps {
   onClose: () => void
   filters: {
     dateRange: { start: string; end: string }
+    month: string
     categories: string[]
     transactionType: 'all' | 'income' | 'expense'
     amountRange: { min: string; max: string }
@@ -93,6 +94,23 @@ export default function FilterSidebar({
                   className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
+            </div>
+          </div>
+
+          {/* Month Picker */}
+          <div>
+            <h3 className="text-sm font-medium text-gray-900 mb-3">Month Filter</h3>
+            <div>
+              <label className="block text-xs text-gray-600 mb-1">Select Month</label>
+              <input
+                type="month"
+                value={localFilters.month}
+                onChange={(e) => setLocalFilters(prev => ({
+                  ...prev,
+                  month: e.target.value
+                }))}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
             </div>
           </div>
 
