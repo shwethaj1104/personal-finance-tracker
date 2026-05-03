@@ -99,18 +99,42 @@ export default function FilterSidebar({
 
           {/* Month Picker */}
           <div>
-            <h3 className="text-sm font-medium text-gray-900 mb-3">Month Filter</h3>
             <div>
               <label className="block text-xs text-gray-600 mb-1">Select Month</label>
-              <input
-                type="month"
+              <select
                 value={localFilters.month}
                 onChange={(e) => setLocalFilters(prev => ({
                   ...prev,
                   month: e.target.value
                 }))}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
+              >
+                <option value="">MMMM YYYY</option>
+                <option value="2024-01">January 2024</option>
+                <option value="2024-02">February 2024</option>
+                <option value="2024-03">March 2024</option>
+                <option value="2024-04">April 2024</option>
+                <option value="2024-05">May 2024</option>
+                <option value="2024-06">June 2024</option>
+                <option value="2024-07">July 2024</option>
+                <option value="2024-08">August 2024</option>
+                <option value="2024-09">September 2024</option>
+                <option value="2024-10">October 2024</option>
+                <option value="2024-11">November 2024</option>
+                <option value="2024-12">December 2024</option>
+                <option value="2025-01">January 2025</option>
+                <option value="2025-02">February 2025</option>
+                <option value="2025-03">March 2025</option>
+                <option value="2025-04">April 2025</option>
+                <option value="2025-05">May 2025</option>
+                <option value="2025-06">June 2025</option>
+                <option value="2025-07">July 2025</option>
+                <option value="2025-08">August 2025</option>
+                <option value="2025-09">September 2025</option>
+                <option value="2025-10">October 2025</option>
+                <option value="2025-11">November 2025</option>
+                <option value="2025-12">December 2025</option>
+              </select>
             </div>
           </div>
 
