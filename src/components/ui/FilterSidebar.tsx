@@ -99,11 +99,11 @@ export default function FilterSidebar({
 
           {/* Month Picker */}
           <div>
-            <h3 className="text-sm font-medium text-gray-900 mb-3">Month Filter</h3>
             <div>
               <label className="block text-xs text-gray-600 mb-1">Select Month</label>
               <input
                 type="month"
+                placeholder=""
                 value={localFilters.month}
                 onChange={(e) => setLocalFilters(prev => ({
                   ...prev,
