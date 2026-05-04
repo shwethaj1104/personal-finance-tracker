@@ -43,14 +43,8 @@ export default function FilterSidebar({
 
   return (
     <>
-      {/* Backdrop */}
-      <div
-        className="fixed inset-0 bg-black bg-opacity-50 z-40"
-        onClick={onClose}
-      />
-
       {/* Sidebar */}
-      <div className="fixed top-0 right-0 h-full w-96 bg-white shadow-xl z-50 flex flex-col">
+      <div className="fixed top-0 right-0 h-full w-96 bg-white shadow-2xl z-50 flex flex-col">
         <div className="p-6 border-b">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-semibold text-gray-900">Advanced Filters</h2>
