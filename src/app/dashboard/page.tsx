@@ -19,6 +19,23 @@ export default function DashboardPage() {
     amountRange: { min: '', max: '' }
   })
 
+  // Mock user data - would be fetched from API based on login
+  const getMockUserData = () => {
+    const mockUsers = [
+      { name: 'John Smith', email: 'john.smith@gmail.com' },
+      { name: 'Sarah Johnson', email: 'sarah.johnson@yahoo.com' },
+      { name: 'Mike Davis', email: 'mike.davis@outlook.com' },
+      { name: 'Lisa Chen', email: 'lisa.chen@hotmail.com' },
+      { name: 'Alex Rodriguez', email: 'alex.rodriguez@gmail.com' }
+    ]
+
+    // Simple hash based on current time for demo purposes
+    const index = Date.now() % mockUsers.length
+    return mockUsers[index]
+  }
+
+  const [userData] = useState(getMockUserData())
+
   useEffect(() => {
     // Fetch dashboard data
     fetchDashboardData()
@@ -71,8 +88,8 @@ export default function DashboardPage() {
 
                 {/* Hover Tooltip */}
                 <div className="absolute right-0 top-12 bg-white shadow-lg border border-gray-200 rounded-lg p-4 min-w-48 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
-                  <div className="text-sm font-medium text-gray-900">Shwetha</div>
-                  <div className="text-sm text-gray-600">107784718+shwethaj1104@users.noreply.github.com</div>
+                  <div className="text-sm font-medium text-gray-900">{userData.name}</div>
+                  <div className="text-sm text-gray-600">{userData.email}</div>
                 </div>
               </div>
 
