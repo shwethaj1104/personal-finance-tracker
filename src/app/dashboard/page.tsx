@@ -61,6 +61,21 @@ export default function DashboardPage() {
               <p className="text-gray-600">Track your income and expenses</p>
             </div>
             <div className="flex items-center space-x-4">
+              {/* User Profile Icon */}
+              <div className="relative group">
+                <div className="w-10 h-10 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full flex items-center justify-center cursor-pointer hover:shadow-lg transition-all duration-200">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+
+                {/* Hover Tooltip */}
+                <div className="absolute right-0 top-12 bg-white shadow-lg border border-gray-200 rounded-lg p-4 min-w-48 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                  <div className="text-sm font-medium text-gray-900">Shwetha</div>
+                  <div className="text-sm text-gray-600">107784718+shwethaj1104@users.noreply.github.com</div>
+                </div>
+              </div>
+
               <Button onClick={() => router.push('/login')} variant="outline">
                 Logout
               </Button>
