@@ -51,7 +51,7 @@ export default function MonthlyTrendChart({ data }: MonthlyTrendChartProps) {
                   <span className="text-xs font-semibold text-rose-600 w-18">Expenses</span>
                   <div className="flex-1 bg-gradient-to-r from-gray-200 to-gray-100 rounded-full h-3 shadow-inner">
                     <div
-                      className="bg-gradient-to-r from-rose-500 to-pink-500 h-3 rounded-full shadow-sm transition-all duration-300 hover:shadow-md"
+                      className="bg-gradient-to-r from-rose-300 to-pink-300 h-3 rounded-full shadow-sm transition-all duration-300 hover:shadow-md"
                       style={{ width: `${(item.expenses / maxAmount) * 100}%` }}
                     />
                   </div>
