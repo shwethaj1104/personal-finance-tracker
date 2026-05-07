@@ -162,15 +162,15 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-rose-25 to-pink-25 p-6 rounded-xl shadow-sm border border-rose-50">
+          <div className="bg-gradient-to-r from-amber-25 to-orange-25 p-6 rounded-xl shadow-sm border border-amber-50">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-rose-600 font-medium">Total Expenses</p>
-                <p className="text-3xl font-bold bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+                <p className="text-3xl font-bold bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
                   ${dashboardData.totalExpenses.toLocaleString()}
                 </p>
               </div>
-              <div className="bg-gradient-to-r from-rose-300 to-pink-300 p-3 rounded-xl shadow-sm">
+              <div className="bg-gradient-to-r from-amber-400 to-orange-400 p-3 rounded-xl shadow-sm">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 13l-5 5m0 0l-5-5m5 5V6" />
                 </svg>
@@ -276,14 +276,14 @@ export default function DashboardPage() {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
                         transaction.type === 'income'
-                          ? 'bg-green-50 text-green-600'
+                          ? 'bg-emerald-50 text-emerald-600'
                           : 'bg-red-100 text-red-800'
                       }`}>
                         {transaction.type}
                       </span>
                     </td>
                     <td className={`px-6 py-4 whitespace-nowrap text-sm font-medium ${
-                      transaction.type === 'income' ? 'text-green-400' : 'text-red-400'
+                      transaction.type === 'income' ? 'text-emerald-500' : 'text-rose-500'
                     }`}>
                       {transaction.type === 'income' ? '+' : '-'}${transaction.amount.toLocaleString()}
                     </td>
