@@ -162,15 +162,15 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl shadow-sm border border-rose-100">
+          <div className="bg-gradient-to-r from-rose-25 to-pink-25 p-6 rounded-xl shadow-sm border border-rose-50">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-rose-600 font-medium">Total Expenses</p>
-                <p className="text-3xl font-bold bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">
+                <p className="text-3xl font-bold bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
                   ${dashboardData.totalExpenses.toLocaleString()}
                 </p>
               </div>
-              <div className="bg-gradient-to-r from-rose-500 to-pink-500 p-3 rounded-xl shadow-sm">
+              <div className="bg-gradient-to-r from-rose-300 to-pink-300 p-3 rounded-xl shadow-sm">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 13l-5 5m0 0l-5-5m5 5V6" />
                 </svg>
@@ -180,17 +180,17 @@ export default function DashboardPage() {
 
           <div className={`p-6 rounded-xl shadow-sm border ${
             dashboardData.netBalance >= 0
-              ? 'bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-100'
+              ? 'bg-gradient-to-r from-blue-25 to-indigo-25 border-blue-50'
               : 'bg-gradient-to-r from-orange-50 to-red-50 border-orange-100'
           }`}>
             <div className="flex items-center justify-between">
               <div>
                 <p className={`text-sm font-medium ${
-                  dashboardData.netBalance >= 0 ? 'text-blue-600' : 'text-orange-600'
+                  dashboardData.netBalance >= 0 ? 'text-blue-400' : 'text-orange-400'
                 }`}>Net Balance</p>
                 <p className={`text-3xl font-bold ${
                   dashboardData.netBalance >= 0
-                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'
+                    ? 'bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent'
                     : 'bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent'
                 }`}>
                   ${dashboardData.netBalance.toLocaleString()}
@@ -198,7 +198,7 @@ export default function DashboardPage() {
               </div>
               <div className={`p-3 rounded-xl shadow-sm ${
                 dashboardData.netBalance >= 0
-                  ? 'bg-gradient-to-r from-blue-500 to-indigo-500'
+                  ? 'bg-gradient-to-r from-blue-300 to-indigo-300'
                   : 'bg-gradient-to-r from-orange-500 to-red-500'
               }`}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -276,14 +276,14 @@ export default function DashboardPage() {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
                         transaction.type === 'income'
-                          ? 'bg-green-100 text-green-800'
+                          ? 'bg-green-50 text-green-600'
                           : 'bg-red-100 text-red-800'
                       }`}>
                         {transaction.type}
                       </span>
                     </td>
                     <td className={`px-6 py-4 whitespace-nowrap text-sm font-medium ${
-                      transaction.type === 'income' ? 'text-green-600' : 'text-red-600'
+                      transaction.type === 'income' ? 'text-green-400' : 'text-red-400'
                     }`}>
                       {transaction.type === 'income' ? '+' : '-'}${transaction.amount.toLocaleString()}
                     </td>

@@ -99,7 +99,7 @@ export default function TransactionForm({ onSubmit, onCancel }: TransactionFormP
                 value="income"
                 checked={formData.type === 'income'}
                 onChange={handleInputChange}
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
+                className="h-4 w-4 text-blue-400 focus:ring-blue-300 border-gray-300"
               />
               <span className="ml-2 text-sm text-gray-700">Income</span>
             </label>
@@ -110,7 +110,7 @@ export default function TransactionForm({ onSubmit, onCancel }: TransactionFormP
                 value="expense"
                 checked={formData.type === 'expense'}
                 onChange={handleInputChange}
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
+                className="h-4 w-4 text-blue-400 focus:ring-blue-300 border-gray-300"
               />
               <span className="ml-2 text-sm text-gray-700">Expense</span>
             </label>
@@ -134,7 +134,7 @@ export default function TransactionForm({ onSubmit, onCancel }: TransactionFormP
               onChange={handleInputChange}
               step="0.01"
               min="0"
-              className={`w-full pl-7 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors ${
+              className={`w-full pl-7 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-transparent outline-none transition-colors ${
                 errors.amount ? 'border-red-300' : 'border-gray-300'
               }`}
               placeholder="0.00"
@@ -154,7 +154,7 @@ export default function TransactionForm({ onSubmit, onCancel }: TransactionFormP
             name="description"
             value={formData.description}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors ${
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-transparent outline-none transition-colors ${
               errors.description ? 'border-red-300' : 'border-gray-300'
             }`}
             placeholder="Enter transaction description"
@@ -172,7 +172,7 @@ export default function TransactionForm({ onSubmit, onCancel }: TransactionFormP
             name="category"
             value={formData.category}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors ${
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-transparent outline-none transition-colors ${
               errors.category ? 'border-red-300' : 'border-gray-300'
             }`}
           >
@@ -197,7 +197,7 @@ export default function TransactionForm({ onSubmit, onCancel }: TransactionFormP
             name="date"
             value={formData.date}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors ${
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-transparent outline-none transition-colors ${
               errors.date ? 'border-red-300' : 'border-gray-300'
             }`}
           />
@@ -215,7 +215,7 @@ export default function TransactionForm({ onSubmit, onCancel }: TransactionFormP
             value={formData.notes}
             onChange={handleInputChange}
             rows={3}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors resize-none"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-300 focus:border-transparent outline-none transition-colors resize-none"
             placeholder="Add any additional notes..."
           />
         </div>

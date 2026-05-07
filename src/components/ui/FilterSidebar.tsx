@@ -73,7 +73,7 @@ export default function FilterSidebar({
                     ...prev,
                     dateRange: { ...prev.dateRange, start: e.target.value }
                   }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-300 focus:border-transparent"
                 />
               </div>
               <div>
@@ -85,7 +85,7 @@ export default function FilterSidebar({
                     ...prev,
                     dateRange: { ...prev.dateRange, end: e.target.value }
                   }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-300 focus:border-transparent"
                 />
               </div>
             </div>
@@ -103,7 +103,7 @@ export default function FilterSidebar({
                   ...prev,
                   month: e.target.value
                 }))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-300 focus:border-transparent"
               />
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function FilterSidebar({
                     type="checkbox"
                     checked={localFilters.categories.includes(category)}
                     onChange={() => handleCategoryToggle(category)}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    className="h-4 w-4 text-blue-400 focus:ring-blue-300 border-gray-300 rounded"
                   />
                   <span className="ml-2 text-sm text-gray-700">{category}</span>
                 </label>
@@ -145,7 +145,7 @@ export default function FilterSidebar({
                       ...prev,
                       transactionType: e.target.value as 'all' | 'income' | 'expense'
                     }))}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
+                    className="h-4 w-4 text-blue-400 focus:ring-blue-300 border-gray-300"
                   />
                   <span className="ml-2 text-sm text-gray-700">{option.label}</span>
                 </label>
@@ -167,7 +167,7 @@ export default function FilterSidebar({
                     ...prev,
                     amountRange: { ...prev.amountRange, min: e.target.value }
                   }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-300 focus:border-transparent"
                 />
               </div>
               <div>
@@ -180,7 +180,7 @@ export default function FilterSidebar({
                     ...prev,
                     amountRange: { ...prev.amountRange, max: e.target.value }
                   }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-300 focus:border-transparent"
                 />
               </div>
             </div>
@@ -192,7 +192,7 @@ export default function FilterSidebar({
           <div className="flex space-x-3">
             <button
               onClick={handleApplyFilters}
-              className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+              className="flex-1 bg-blue-400 text-white py-2 px-4 rounded-md font-medium hover:bg-blue-500 focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 transition-colors"
             >
               Apply Filters
             </button>
