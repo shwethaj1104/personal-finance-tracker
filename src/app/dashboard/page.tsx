@@ -165,7 +165,7 @@ export default function DashboardPage() {
           <div className="bg-gradient-to-r from-amber-25 to-orange-25 p-6 rounded-xl shadow-sm border border-amber-50">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-rose-600 font-medium">Total Expenses</p>
+                <p className="text-sm text-amber-600 font-medium">Total Expenses</p>
                 <p className="text-3xl font-bold bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
                   ${dashboardData.totalExpenses.toLocaleString()}
                 </p>
