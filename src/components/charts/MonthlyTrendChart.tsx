@@ -26,8 +26,8 @@ export default function MonthlyTrendChart({ data }: MonthlyTrendChartProps) {
                 <span className="text-sm font-semibold text-gray-800">{item.month}</span>
                 <div className={`text-sm font-bold px-3 py-1 rounded-full ${
                   isPositive
-                    ? 'bg-emerald-100 text-emerald-700'
-                    : 'bg-rose-100 text-rose-700'
+                    ? 'bg-blue-50 text-blue-600'
+                    : 'bg-orange-50 text-orange-600'
                 }`}>
                   Net: {isPositive ? '+' : ''}${netAmount.toLocaleString()}
                 </div>
@@ -35,10 +35,10 @@ export default function MonthlyTrendChart({ data }: MonthlyTrendChartProps) {
               <div className="space-y-3">
                 {/* Income Bar */}
                 <div className="flex items-center space-x-3">
-                  <span className="text-xs font-semibold text-emerald-600 w-18">Income</span>
+                  <span className="text-xs font-semibold text-blue-500 w-18">Income</span>
                   <div className="flex-1 bg-gradient-to-r from-gray-200 to-gray-100 rounded-full h-3 shadow-inner">
                     <div
-                      className="bg-gradient-to-r from-emerald-500 to-teal-500 h-3 rounded-full shadow-sm transition-all duration-300 hover:shadow-md"
+                      className="bg-gradient-to-r from-blue-400 to-indigo-400 h-3 rounded-full shadow-sm transition-all duration-300 hover:shadow-md"
                       style={{ width: `${(item.income / maxAmount) * 100}%` }}
                     />
                   </div>
@@ -48,10 +48,10 @@ export default function MonthlyTrendChart({ data }: MonthlyTrendChartProps) {
                 </div>
                 {/* Expense Bar */}
                 <div className="flex items-center space-x-3">
-                  <span className="text-xs font-semibold text-purple-600 w-18">Expenses</span>
+                  <span className="text-xs font-semibold text-amber-600 w-18">Expenses</span>
                   <div className="flex-1 bg-gradient-to-r from-gray-200 to-gray-100 rounded-full h-3 shadow-inner">
                     <div
-                      className="bg-gradient-to-r from-purple-400 to-violet-400 h-3 rounded-full shadow-sm transition-all duration-300 hover:shadow-md"
+                      className="bg-gradient-to-r from-amber-400 to-orange-400 h-3 rounded-full shadow-sm transition-all duration-300 hover:shadow-md"
                       style={{ width: `${(item.expenses / maxAmount) * 100}%` }}
                     />
                   </div>
