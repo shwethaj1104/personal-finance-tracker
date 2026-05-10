@@ -59,6 +59,27 @@ export default function DashboardPage() {
     setFilters(newFilters)
   }
 
+  const handleExportCSV = async () => {
+    try {
+      const response = await fetch('/api/export?format=csv')
+      if (response.ok) {
+        const blob = await response.blob()
+        const url = window.URL.createObjectURL(blob)
+        const a = document.createElement('a')
+        a.href = url
+        a.download = 'transactions.csv'
+        document.body.appendChild(a)
+        a.click()
+        document.body.removeChild(a)
+        window.URL.revokeObjectURL(url)
+      } else {
+        console.error('Failed to export CSV')
+      }
+    } catch (error) {
+      console.error('Export error:', error)
+    }
+  }
+
   if (!dashboardData) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -235,7 +256,7 @@ export default function DashboardPage() {
           <div className="p-6 border-b">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-semibold text-gray-900">Recent Transactions</h3>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" onClick={handleExportCSV}>
                 Export CSV
               </Button>
             </div>
