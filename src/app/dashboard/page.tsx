@@ -252,8 +252,8 @@ export default function DashboardPage() {
         </div>
 
         {/* Recent Transactions */}
-        <div className="mt-8 bg-white rounded-lg shadow-sm border">
-          <div className="p-6 border-b">
+        <div className="mt-8 mb-12 bg-white rounded-lg shadow-sm">
+          <div className="p-6">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-semibold text-gray-900">Recent Transactions</h3>
               <Button variant="outline" size="sm" onClick={handleExportCSV}>
@@ -261,7 +261,7 @@ export default function DashboardPage() {
               </Button>
             </div>
           </div>
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto pb-6">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
