@@ -252,7 +252,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Recent Transactions */}
-        <div className="mt-8 mb-12 bg-white rounded-lg shadow-sm border">
+        <div className="mt-8 mb-12 bg-white rounded-lg shadow-sm">
           <div className="p-6 border-b">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-semibold text-gray-900">Recent Transactions</h3>
