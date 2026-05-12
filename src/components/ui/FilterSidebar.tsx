@@ -62,7 +62,6 @@ export default function FilterSidebar({
         <div className="flex-1 p-6 space-y-6 overflow-y-auto">
           {/* Date Range */}
           <div>
-            <h3 className="text-sm font-medium text-gray-900 mb-3">Date Range</h3>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs text-gray-600 mb-1">Start Date</label>
