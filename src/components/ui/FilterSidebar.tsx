@@ -45,12 +45,12 @@ export default function FilterSidebar({
     <>
       {/* Sidebar */}
       <div className="fixed top-0 right-0 h-full w-96 bg-white shadow-2xl z-50 flex flex-col">
-        <div className="p-6 border-b">
+        <div className="p-6 bg-gradient-to-r from-blue-400 to-indigo-400">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-semibold text-gray-900">Advanced Filters</h2>
+            <h2 className="text-xl font-semibold text-white">Advanced Filters</h2>
             <button
               onClick={onClose}
-              className="text-gray-400 hover:text-gray-600 transition-colors"
+              className="text-white hover:text-gray-200 transition-colors"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
