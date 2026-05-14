@@ -35,6 +35,10 @@ export default function DashboardPage() {
   }
 
   const [userData] = useState(getMockUserData())
+  const [selectedPeriod, setSelectedPeriod] = useState('This Month')
+  const [selectedCategory, setSelectedCategory] = useState('All Categories')
+  const [isPeriodOpen, setIsPeriodOpen] = useState(false)
+  const [isCategoryOpen, setIsCategoryOpen] = useState(false)
 
   useEffect(() => {
     // Fetch dashboard data
@@ -129,22 +133,63 @@ export default function DashboardPage() {
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
                 <label className="text-sm font-medium text-gray-700">Period:</label>
-                <select className="px-4 py-2.5 bg-gradient-to-r from-white to-gray-50 border-2 border-gray-200 rounded-lg text-sm font-medium text-gray-700 focus:ring-2 focus:ring-blue-300 focus:border-blue-300 hover:border-gray-300 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer">
-                  <option>This Month</option>
-                  <option>Last Month</option>
-                  <option>Last 3 Months</option>
-                  <option>This Year</option>
-                </select>
+                <div className="relative">
+                  <button
+                    onClick={() => setIsPeriodOpen(!isPeriodOpen)}
+                    className="px-4 py-2.5 bg-gradient-to-r from-white to-gray-50 border-2 border-gray-200 rounded-lg text-sm font-medium text-gray-700 focus:ring-2 focus:ring-blue-300 focus:border-blue-300 hover:border-gray-300 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer flex items-center space-x-2 min-w-32"
+                  >
+                    <span>{selectedPeriod}</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {isPeriodOpen && (
+                    <div className="absolute top-full left-0 mt-1 w-full bg-white border-2 border-gray-200 rounded-lg shadow-lg z-20">
+                      {['This Month', 'Last Month', 'Last 3 Months', 'This Year'].map((period) => (
+                        <button
+                          key={period}
+                          onClick={() => {
+                            setSelectedPeriod(period)
+                            setIsPeriodOpen(false)
+                          }}
+                          className="w-full px-4 py-2.5 text-left text-sm font-medium text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-700 transition-all duration-200 first:rounded-t-lg last:rounded-b-lg"
+                        >
+                          {period}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
               <div className="flex items-center space-x-2">
                 <label className="text-sm font-medium text-gray-700">Category:</label>
-                <select className="px-4 py-2.5 bg-gradient-to-r from-white to-gray-50 border-2 border-gray-200 rounded-lg text-sm font-medium text-gray-700 focus:ring-2 focus:ring-blue-300 focus:border-blue-300 hover:border-gray-300 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer">
-                  <option>All Categories</option>
-                  <option>Food</option>
-                  <option>Rent</option>
-                  <option>Travel</option>
-                  <option>Entertainment</option>
-                </select>
+                <div className="relative">
+                  <button
+                    onClick={() => setIsCategoryOpen(!isCategoryOpen)}
+                    className="px-4 py-2.5 bg-gradient-to-r from-white to-gray-50 border-2 border-gray-200 rounded-lg text-sm font-medium text-gray-700 focus:ring-2 focus:ring-blue-300 focus:border-blue-300 hover:border-gray-300 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer flex items-center space-x-2 min-w-36"
+                  >
+                    <span>{selectedCategory}</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {isCategoryOpen && (
+                    <div className="absolute top-full left-0 mt-1 w-full bg-white border-2 border-gray-200 rounded-lg shadow-lg z-20">
+                      {['All Categories', 'Food', 'Rent', 'Travel', 'Entertainment', 'Healthcare', 'Shopping', 'Utilities'].map((category) => (
+                        <button
+                          key={category}
+                          onClick={() => {
+                            setSelectedCategory(category)
+                            setIsCategoryOpen(false)
+                          }}
+                          className="w-full px-4 py-2.5 text-left text-sm font-medium text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-700 transition-all duration-200 first:rounded-t-lg last:rounded-b-lg"
+                        >
+                          {category}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
             <div className="flex items-center space-x-3">
