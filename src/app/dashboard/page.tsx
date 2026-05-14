@@ -129,7 +129,7 @@ export default function DashboardPage() {
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
                 <label className="text-sm font-medium text-gray-700">Period:</label>
-                <select className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <select className="px-4 py-2.5 bg-gradient-to-r from-white to-gray-50 border-2 border-gray-200 rounded-lg text-sm font-medium text-gray-700 focus:ring-2 focus:ring-blue-300 focus:border-blue-300 hover:border-gray-300 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer">
                   <option>This Month</option>
                   <option>Last Month</option>
                   <option>Last 3 Months</option>
@@ -138,7 +138,7 @@ export default function DashboardPage() {
               </div>
               <div className="flex items-center space-x-2">
                 <label className="text-sm font-medium text-gray-700">Category:</label>
-                <select className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <select className="px-4 py-2.5 bg-gradient-to-r from-white to-gray-50 border-2 border-gray-200 rounded-lg text-sm font-medium text-gray-700 focus:ring-2 focus:ring-blue-300 focus:border-blue-300 hover:border-gray-300 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer">
                   <option>All Categories</option>
                   <option>Food</option>
                   <option>Rent</option>
