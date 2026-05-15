@@ -201,7 +201,10 @@ export default function DashboardPage() {
                     </svg>
                   </button>
                   {isCategoryOpen && (
-                    <div className="absolute top-full left-0 mt-1 w-full bg-white border-2 border-gray-200 rounded-lg shadow-lg z-20">
+                    <div
+                      className="absolute top-full left-0 mt-1 w-full bg-white border-2 border-gray-200 rounded-lg shadow-lg z-20"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       {['All Categories', 'Food', 'Rent', 'Travel', 'Entertainment', 'Healthcare', 'Shopping', 'Utilities'].map((category) => (
                         <button
                           key={category}
