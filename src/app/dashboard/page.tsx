@@ -45,6 +45,24 @@ export default function DashboardPage() {
     fetchDashboardData()
   }, [filters])
 
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isPeriodOpen || isCategoryOpen) {
+        setIsPeriodOpen(false)
+        setIsCategoryOpen(false)
+      }
+    }
+
+    if (isPeriodOpen || isCategoryOpen) {
+      document.addEventListener('click', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+    }
+  }, [isPeriodOpen, isCategoryOpen])
+
   const fetchDashboardData = async () => {
     try {
       const response = await fetch('/api/dashboard')
@@ -135,7 +153,10 @@ export default function DashboardPage() {
                 <label className="text-sm font-medium text-gray-700">Period:</label>
                 <div className="relative">
                   <button
-                    onClick={() => setIsPeriodOpen(!isPeriodOpen)}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      setIsPeriodOpen(!isPeriodOpen)
+                    }}
                     className="px-4 py-2.5 bg-gradient-to-r from-white to-gray-50 border-2 border-gray-200 rounded-lg text-sm font-medium text-gray-700 focus:ring-2 focus:ring-blue-300 focus:border-blue-300 hover:border-gray-300 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer flex items-center space-x-2 min-w-32"
                   >
                     <span>{selectedPeriod}</span>
@@ -144,7 +165,10 @@ export default function DashboardPage() {
                     </svg>
                   </button>
                   {isPeriodOpen && (
-                    <div className="absolute top-full left-0 mt-1 w-full bg-white border-2 border-gray-200 rounded-lg shadow-lg z-20">
+                    <div
+                      className="absolute top-full left-0 mt-1 w-full bg-white border-2 border-gray-200 rounded-lg shadow-lg z-20"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       {['This Month', 'Last Month', 'Last 3 Months', 'This Year'].map((period) => (
                         <button
                           key={period}
@@ -165,7 +189,10 @@ export default function DashboardPage() {
                 <label className="text-sm font-medium text-gray-700">Category:</label>
                 <div className="relative">
                   <button
-                    onClick={() => setIsCategoryOpen(!isCategoryOpen)}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      setIsCategoryOpen(!isCategoryOpen)
+                    }}
                     className="px-4 py-2.5 bg-gradient-to-r from-white to-gray-50 border-2 border-gray-200 rounded-lg text-sm font-medium text-gray-700 focus:ring-2 focus:ring-blue-300 focus:border-blue-300 hover:border-gray-300 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer flex items-center space-x-2 min-w-36"
                   >
                     <span>{selectedCategory}</span>
