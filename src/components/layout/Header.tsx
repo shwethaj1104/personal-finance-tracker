@@ -12,9 +12,12 @@ interface HeaderProps {
   title: string
   subtitle?: string
   user: User
+  showBackButton?: boolean
+  backButtonText?: string
+  backButtonPath?: string
 }
 
-export default function Header({ title, subtitle, user }: HeaderProps) {
+export default function Header({ title, subtitle, user, showBackButton = false, backButtonText = "Back to Dashboard", backButtonPath = "/dashboard" }: HeaderProps) {
   const router = useRouter()
 
   return (
@@ -22,6 +25,27 @@ export default function Header({ title, subtitle, user }: HeaderProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-6">
           <div>
+            {showBackButton && (
+              <button
+                onClick={() => router.push(backButtonPath)}
+                className="flex items-center text-white/80 hover:text-white transition-colors mb-3 group"
+              >
+                <svg
+                  className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                  />
+                </svg>
+                {backButtonText}
+              </button>
+            )}
             <h1 className="text-2xl font-bold text-white">{title}</h1>
             {subtitle && <p className="text-blue-50 mt-1">{subtitle}</p>}
           </div>
