@@ -23,7 +23,7 @@ export default function Header({ title, subtitle, user, showBackButton = false, 
   return (
     <div className="bg-gradient-to-r from-blue-400 to-indigo-400 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-6">
+        <div className={`flex justify-between items-center ${showBackButton ? 'py-4' : 'py-6'}`}>
           <div>
             {showBackButton && (
               <button
